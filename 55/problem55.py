@@ -1,12 +1,19 @@
+def reverse_str(n):
+    return str(n)[::-1]
+
 def is_palindromic(n):
-    n = str(n)    
-    if len(n) < 3:
-        return n[0] == n[-1]    
-    return is_palindromic(n[1:-1]
-
+    return str(n) == reverse_str(n)
+    
 def is_lychrel(n):
+    for i in xrange(0,50):
+        n = n + int(reverse_str(n))
+        if is_palindromic(n):
+            return False        
+    return True
 
-    
-    
+print len(filter(is_lychrel, xrange(0, 10000)))
+
+
+
 
 
